@@ -1,4 +1,6 @@
 <body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @include('template/header')
 @include('template/navbar')
 @include('template/sidebar')
@@ -26,11 +28,11 @@
                        </tr>
                     </thead>
                     <tbody>
-                        @if(!empty($proses) && $proses->count())
-                            @foreach ($proses as $data=>$key)
+                    @if(!empty($proses) && $proses->count())
+                            @foreach ($proses as $rows)
                                 <tr>
-                                    <td> {{ ucfirst($data) }} </label></td>
-                                    <td> {{ count($key) }}</td>
+                                    <td> {{ $rows->label }} </td>
+                                    <td> {{ $rows->jumlah }}</td>
                                 @error('proses')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -60,7 +62,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div id="donut-chart" style="height: 300px;"></div>
+                            <canvas id="grafikSPM" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
             </div>
         </div>
@@ -69,16 +71,42 @@
 @include('template/footer')
 </body>
 
-<!-- Javascript untuk Grafik -->
-<script src="{{ asset('style/plugins/chart.js/Chart.min.js') }}"></script>
-
-<script>
-    var data = [
-        {
-            var donutChartCanvas = $('#donut-chart').get(0).getContext('2d')
-            labels = [
-
+<!-- Javascript Grafik --> 
+<script> 
+    $(function () {
+        var SPMData = JSON.parse('<?php echo $data_chart; ?>');
+        var SPMChartCanvas = $('grafikSPM').get(0).getContext('2d');
+        var SPMData = {
+            labels: SPMData.label,
+            datasets: [
+            {
+                data: SPMData.jumlah,
+                backgroundColor: [
+                    '#f56954', 
+                    '#00a65a', 
+                    '#f39c12', 
+                    '#00c0ef',  
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1
+            }
             ]
         }
-    ]
+
+    var options = {
+        maintainAspectRatio : false,
+        responsive : true,
+    }
+
+    var chart = new Chart(SPMChartCanvas,{
+        type="pie",
+        data: SPMData,
+        options: options
+
+    });
+
+});
 </script>
