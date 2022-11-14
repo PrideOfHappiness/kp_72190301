@@ -16,16 +16,9 @@ class listSepedaMotor extends Controller
         $awal = Carbon::createFromFormat('Y-m-d H:i:s', $request->date('dataAwal'))->startOfDay();
         $akhir = Carbon::createFromFormat('Y-m-d H:i:s', $request->date('dataAkhir'))->endOfDay();
 
-        $proses = Excel_Data::select('Nama_Barang as nama, count(nama_barang) as count')
-            ->whereBetween('Tanggal_FJ', [$awal, $akhir])->groupBy('Nama_Barang')->get();
+        $proses = Excel_Data::whereBetween(
+            'Tanggal_FJ', [$awal, $akhir])->get()->groupBy('Nama_Barang')->sortBy('Nama_Barang');
 
-        $data = [];
-        foreach ($proses as $row){
-            $data['label'][] = $row->nama;
-            $data['jumlah'][] = (int) $row->count;
-        }
-
-        $data['data_chart'] = json_encode($data);
-        return view('listSepedaMotor/hasilData', $data)->with('awal', $awal)->with('akhir', $akhir);
+        return view('listSepedaMotor/hasilData', compact('proses'))->with('awal', $awal)->with('akhir', $akhir);
     }
 }   

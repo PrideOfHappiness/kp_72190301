@@ -29,10 +29,10 @@
                     </thead>
                     <tbody>
                     @if(!empty($proses) && $proses->count())
-                            @foreach ($proses as $rows)
+                            @foreach ($proses as $data=>$key)
                                 <tr>
-                                    <td> {{ $rows->label }} </td>
-                                    <td> {{ $rows->jumlah }}</td>
+                                    <td> {{ ucfirst($data) }} </label></td>
+                                    <td> {{ count($key) }}</td>
                                 @error('proses')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                            <canvas id="grafikSPM" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            <!--canvas id="grafikSPM" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas -->
                 </div>
             </div>
         </div>
@@ -70,43 +70,3 @@
 </section>
 @include('template/footer')
 </body>
-
-<!-- Javascript Grafik --> 
-<script> 
-    $(function () {
-        var SPMData = JSON.parse('<?php echo $data_chart; ?>');
-        var SPMChartCanvas = $('grafikSPM').get(0).getContext('2d');
-        var SPMData = {
-            labels: SPMData.label,
-            datasets: [
-            {
-                data: SPMData.jumlah,
-                backgroundColor: [
-                    '#f56954', 
-                    '#00a65a', 
-                    '#f39c12', 
-                    '#00c0ef',  
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                ],
-                borderWidth: 1
-            }
-            ]
-        }
-
-    var options = {
-        maintainAspectRatio : false,
-        responsive : true,
-    }
-
-    var chart = new Chart(SPMChartCanvas,{
-        type="pie",
-        data: SPMData,
-        options: options
-
-    });
-
-});
-</script>
