@@ -12,6 +12,7 @@ class Excel_Data extends Model
 
     protected $table='excel_data';
     protected $dates = ['Tanggal_FJ'];
+    protected $guarded = [];
 
     protected $fillable=[
         'Tanggal_FJ',
