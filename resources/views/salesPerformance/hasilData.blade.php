@@ -7,7 +7,7 @@
    <div class="container-fluid" >
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title"> Hasil Pencarian Data Sepeda Motor Terjual Dari Tanggal {{ $awal }} sampai Tanggal {{ $akhir }} </h3>
+                <h3 class="card-title"> Hasil Pencarian Data Performa Sales Dari Tanggal {{ $awal }} sampai Tanggal {{ $akhir }} </h3>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
@@ -17,27 +17,7 @@
                     </button>
                 </div>
             </div>
-            <div class="card-body"><canvas id="grafikSPM1"></canvas>
-            </div>
-        </div>
-        <div class="card card-default">
-            <div class="card card-default">
-                <div class="card-header">
-                    <h3 class="card-title">
-                        <i class="far fa-chart-bar"> </i>
-                        Persentase Sepeda Motor Terjual
-                    </h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body"><canvas id="persentaseSPM" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                </div>
+            <div class="card-body"><canvas id="grafikSales"></canvas>
             </div>
         </div>
    </div>
@@ -55,7 +35,7 @@
         const data = {
             labels: chartDatas.label,
             datasets: [{
-                label: "Jumlah unit terdaftar di ACRS",
+                label: "Jumlah Kendaraan Terjual oleh Sales",
                 data: chartDatas.jumlah,
                 backgroundColor: [
                     '#f56954',
@@ -101,8 +81,8 @@
             }   
         };
 
-        const grafikSPM1 = new Chart(
-            document.getElementById('grafikSPM1'),
+        const grafikSales = new Chart(
+            document.getElementById('grafikSales'),
             configBar
         );
 </script>
