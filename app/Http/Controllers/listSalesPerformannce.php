@@ -27,7 +27,7 @@ class listSalesPerformannce extends Controller
         }
 
         $chartData['chart_data'] = json_encode($chartData);
-        return view('listSepedaMotor/hasilData', $chartData)
+        return view('salesPerformance/hasilData', $chartData)
             ->with('awal', $awal)
             ->with('akhir', $akhir);
     }

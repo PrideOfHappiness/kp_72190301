@@ -31,4 +31,19 @@ class listSepedaMotor extends Controller
             ->with('awal', $awal)
             ->with('akhir', $akhir);
     }
+
+    public function getSeluruhData(){
+        $getData = Excel_Data::selectRaw('count(Nama_Barang) as countData, Nama_Barang as namaBarang')
+            ->groupBy('Nama_Barang')->get();
+
+        $chartTotal = [];
+
+        foreach($getData as $barisData){
+            $chartTotal['label'][] = $barisData->namaBarang;
+            $chartTotal['count'][] = (int) $barisData->countData;
+        }
+
+        $chartTotal['chartTotal'] = json_encode($chartTotal);
+        return view('listSepedaMotor/grafik', $chartTotal);
+    }
 }

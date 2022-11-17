@@ -1,101 +1,83 @@
 <body>
-    <div class="card-body"> 
-        <canvas id="persentaseSPM"></canvas>
-    </div>
+@include('template/header')
+@include('template/navbar')
+@include('template/sidebar')
+
+<section class="content">
+   <div class="container-fluid" >
+        <div class="card card-default">
+            <div class="card-header">
+                <h3 class="card-title"> Hasil Pencarian Data Sepeda Motor Terjual Secara Keseluruhan </h3>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body"><canvas id="grafikSPM1"></canvas>
+            </div>
+        </div>
+   </div>
+</section>
+@include('template/footer')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
 </body>
 
 <script>
-$(function () { 
-    var chartData2 = JSON.parse('<?php echo $chart_data; ?>');
-    var canvas2 = $('#grafikSPM2').get(0).getContext('2d')
-
-    var chartData2 = {
-        labels: chartData2.label,
+    var chartData = JSON.parse('<?php echo $chartTotal; ?>'); 
+    const data = {
+        labels: chartData.label,
         datasets: [{
-            label: "Persentase Data (%)",
-            data: chartData2.jumlah,
+            label: "Jumlah Data",
+            data: chartData.count,
             backgroundColor: [
-                '#f56954',
-                '#00a65a',
-                '#f39c12',
-                '#00c0ef',
-                '#FA8072',
-                '#E9967A',
-                '#FFA07A',
-                '#DFFF00',
-                '#DE3163',
-                '#CCCCFF',
-                '#9FE2BF',
-                '#40E0D0',
-                '#cddc39',
-                '#148f77',
-                '#28b463',
-                '#212f3c',
-                '#388e3c',
-                '#ff7043',
-                '#ff8f00',
-                '#2c3e50',
-                '#6e2c00',
-                '#27ae60',
-                '#2471a3'.
-                '#d35400',
-                '#52be80',
-                '#1abc9c',
-                '#922b21',
-                '#641e16',
-                '#909497',
-                '#af601a',
                 '#212f3c',
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
+                'rgba(255, 0, 255, 1)',
             ],
-                borderWidth: 1
-            }
-        ]
-    }
+            borderWidth: 1
+        }]
+    };
 
-    var options2 = {
-        maintainAspectRatio : true,
-        responsive : true,
-        cutoutPercentage: 80,
-        plugins: {
-            labels: {
-                render: 'percentage',
-                precision: 0,
-                showZero: true,
+    const configBar = {
+        type: 'bar',
+        data: data,
+        options: 
+        {
+            maintainAspectRatio: true, 
+            responsive: true,
+            scales: {
+                xAxes: [{
+                    barPercentage: 2,
+                    categoryPercentage: 0.5,
+                    gridLines: {
+                        display: true,
+                    }
+                }],
+                yAxes: [{
+                    display: true, 
+                    scaleLabel: {
+                        show: true,
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
             }
         }
-    }
+    };
 
-    var chart2 = new Chart(canvas2, {
-        type: 'doughnut',
-        data: chartData2,
-        options: options2
-        })
-})
+    const grafikSPM1 = new Chart(
+        document.getElementById('grafikSPM1'),
+        configBar
+    );
 </script>
 
-//Grafik SPM 2 (Donut Chart => Persentase)
-        var canvas2 = $('#persentaseSPM').get(0).getContext('2d')
-        var pieData = chartDatas;
 
-        var options2 = {
-            maintainAspectRatio : true,
-            responsive : true,
-            cutoutPercentage: 80,
-            plugins: {
-                labels: {
-                    render: 'percentage',
-                    precision: 0,
-                    showZero: true,
-                }
-            }
-        }
-
-        var chart2 = new Chart(canvas2, {
-            type: 'doughnut',
-            data: pieData,
-            options: options2
-            })

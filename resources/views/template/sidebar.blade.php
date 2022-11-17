@@ -1,7 +1,7 @@
     <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="{{ route('dashboard')}}" class="brand-link">
       <img src="{{ asset('style/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
@@ -19,24 +19,13 @@
       </div>
 
       <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="{{ route('dashboard') }}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -45,7 +34,7 @@
           </li>
           <li class="nav-header">Rekap Data dan Grafik</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('lihatData') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Data Penjualan Keseluruhan
@@ -53,7 +42,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{ route('pilihTanggalMotor') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Data Sepeda Motor Terjual
@@ -61,7 +50,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('pilihTanggalSales') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Data Sales Performance
@@ -69,7 +58,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('pilihTanggalPembayaran') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Data Moda Transaksi
@@ -77,7 +66,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('pilihTanggalFinance') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Data Jumlah Perusahaan Financing
@@ -86,7 +75,7 @@
           </li>
           <li class="nav-header">Unggah Data</li>
           <li class="nav-item">
-            <a href="/addData" class="nav-link">
+            <a href="{{ route('addDataExcel') }}" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>
               <p>
                 Unggah Data Penjualan

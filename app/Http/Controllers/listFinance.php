@@ -16,8 +16,8 @@ class listFinance extends Controller
         $awal = Carbon::createFromFormat('Y-m-d H:i:s', $request->date('dataAwal'))->startOfDay();
         $akhir = Carbon::createFromFormat('Y-m-d H:i:s', $request->date('dataAkhir'))->endOfDay();
 
-        $proses = Excel_Data::selectRaw('count(Nama_Sales) as count, Nama_Sales as nama')
-            ->whereBetween('Tanggal_FJ', [$awal, $akhir])->groupBy('Nama_Sales')->get();
+        $proses = Excel_Data::selectRaw('count(Nama_Customer_Biaya) as count, Nama_Customer_Biaya as nama')
+        ->where('Jenis_Bayar', '=', 'Kredit Lembaga Pembiayaan')->whereBetween('Tanggal_FJ', [$awal, $akhir])->groupBy('Nama_Customer_Biaya')->get();
 
         $chartData = [];
 
@@ -27,7 +27,7 @@ class listFinance extends Controller
         }
 
         $chartData['chart_data'] = json_encode($chartData);
-        return view('listSepedaMotor/hasilData', $chartData)
+        return view('listFinance/hasilData', $chartData)
             ->with('awal', $awal)
             ->with('akhir', $akhir);
     }

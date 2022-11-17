@@ -17,30 +17,32 @@ use App\Http\Controllers\llistPembayaran4;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 //Import dan Show keseluruhan data
 Route::get('/addData', [ExcelController::class, 'getFormAddData'])->name('addDataExcel');
 Route::post('/importData', [ExcelController::class, 'importData'])->name('importData');
-Route::get('/showData', [ExcelController::class, 'showData']);
+Route::get('/showData', [ExcelController::class, 'showData'])->name('lihatData');
+Route::get('/', [ExcelController::class, 'dashboard'])->name('dashboard');
 
 //Get Form dan Pemrosesan Data List Sepeda Motor
 Route::get('/listMotor/pilihTanggal', [listSepedaMotor::class, 'getFormTanggal'])->name('pilihTanggalMotor');
 Route::post('/listMotor/prosesDataSepedaMotor', [listSepedaMotor::class, 'prosesTanggal'])->name('prosesDataMotor');
+Route::get('/listMotor/allData', [listSepedaMotor::class, 'getSeluruhData'])->name('getAllMotorData');
 
 //Get Form dan Pemrosesan List Sales
 Route::get('/listSales/pilihTanggal', [listSalesPerformannce::class, 'getFormTanggal'])->name('pilihTanggalSales');
 Route::post('/listSales/prosesDataSales', [listSalesPerformannce::class, 'prosesTanggal'])->name('prosesDataSales');
 
 //Get Form dan Pemrosesan List Perusahaan Finance
-Route::get('/listFinance/pilihTanggal', [listFinance::class, 'getFormTanggal'])->name('pilihTanggal');
+Route::get('/listFinance/pilihTanggal', [listFinance::class, 'getFormTanggal'])->name('pilihTanggalFinance');
 Route::post('/listFinance/prosesDataFinance', [listFinance::class, 'prosesTanggal'])->name('prosesDataFinance');
 
 //Get Form dan Pemrosesan List Moda Pembayaran
-Route::get('/listPembayaran/pilihTanggal', [listPembayaran4::class, 'getFormTanggal'])->name('pilihTanggal');
-Route::post('/listPembayaran/prosesDataPembayaran', [listPembayaran4::class, 'prosesTanggal'])->name('prosesDataPembayaran');
+Route::get('/listPembayaran/pilihTanggal', [llistPembayaran4::class, 'getFormTanggal'])->name('pilihTanggalPembayaran');
+Route::post('/listPembayaran/prosesDataPembayaran', [llistPembayaran4::class, 'prosesTanggal'])->name('prosesDataPembayaran');
 
 
 

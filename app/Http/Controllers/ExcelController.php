@@ -15,9 +15,20 @@ class ExcelController extends Controller
         return view('formAddData');
     }
 
+    public function dashboard(){
+        $dataMotor = Excel_Data::select('Nama_Barang')->groupBy('Nama_Barang')->count();
+        $dataKeseluruhan = Excel_Data::select('Nomor_FJ')->count();
+        $dataSales = Excel_Data::select('Nama_Sales')->groupBy('Nama_Barang')->count();
+        $dataFinance = Excel_Data::select('Nama_Customer_Biaya')->where('Jenis_Bayar', '=', 'Kredit Lembaga Pembiayaan')->groupBy('Nama_Barang')->count();
+
+
+        return view('dashboard')->with('dataMotor', $dataMotor)->with('dataSales', $dataSales)
+            ->with('dataFinance', $dataFinance)->with('dataSeluruh', $dataKeseluruhan);
+    }
+
     public function importData(Request $request){
         Excel::import(new ACRSImport, $request->file('file')->store('temp'));
-        return redirect('/');
+        return redirect('/dashboard');
     }
 
     public function showData(){

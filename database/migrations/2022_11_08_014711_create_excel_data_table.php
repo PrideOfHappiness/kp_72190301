@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('excel_data', function (Blueprint $table) {
             $table->id();
             $table->date('Tanggal_FJ');
-            $table->string('Nomor_FJ');
+            $table->string('Nomor_FJ')->nullable();
             $table->string('Gudang');
             $table->string('Nomor_Mesin');
             $table->string('Nomor_Rangka');
