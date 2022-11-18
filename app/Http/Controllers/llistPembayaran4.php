@@ -33,4 +33,19 @@ class llistPembayaran4 extends Controller
             ->with('awal', $awal)
             ->with('akhir', $akhir);
     }
+
+    public function getSeluruhData(){
+        $getData = Excel_Data::selectRaw('count(Jenis_Bayar) as countData, Nama_Sales as jenisBayar')
+            ->groupBy('Jenis_Bayar')->get();
+
+        $chartTotal = [];
+
+        foreach($getData as $barisData){
+            $chartTotal['label'][] = $barisData->jenisBayar;
+            $chartTotal['count'][] = (int) $barisData->countData;
+        }
+
+        $chartTotal['chartTotal'] = json_encode($chartTotal);
+        return view('listPembayaran/grafik', $chartTotal);
+    }
 }

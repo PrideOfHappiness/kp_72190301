@@ -1,4 +1,10 @@
-@include('template/header')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @include('template/header')
+    <title>Ambil Tanggal</title>
+</head>
+<body>
 @include('template/navbar')
 @include('template/sidebar')
 <section class="content">
@@ -43,4 +49,6 @@
     </div>
 </section>
 @include('template/footer')
+</body>
+</html>
 

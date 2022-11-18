@@ -31,4 +31,19 @@ class listFinance extends Controller
             ->with('awal', $awal)
             ->with('akhir', $akhir);
     }
+
+    public function getSeluruhData(){
+        $getData = Excel_Data::selectRaw('count(Nama_Customer_Biaya) as countData, Nama_Customer_Biaya as perusahaan')
+            ->where('Jenis_Bayar', '=', 'Kredit Lembaga Pembiayaan')->groupBy('Nama_Customer_Biaya')->get();
+
+        $chartTotal = [];
+
+        foreach($getData as $barisData){
+            $chartTotal['label'][] = $barisData->perusahaan;
+            $chartTotal['count'][] = (int) $barisData->countData;
+        }
+
+        $chartTotal['chartTotal'] = json_encode($chartTotal);
+        return view('listFinance/grafik', $chartTotal);
+    }
 }

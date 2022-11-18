@@ -31,4 +31,19 @@ class listSalesPerformannce extends Controller
             ->with('awal', $awal)
             ->with('akhir', $akhir);
     }
+
+    public function getSeluruhData(){
+        $getData = Excel_Data::selectRaw('count(Nama_Barang) as countData, Nama_Sales as namaSales')
+            ->groupBy('Nama_Sales')->get();
+
+        $chartTotal = [];
+
+        foreach($getData as $barisData){
+            $chartTotal['label'][] = $barisData->namaSales;
+            $chartTotal['count'][] = (int) $barisData->countData;
+        }
+
+        $chartTotal['chartTotal'] = json_encode($chartTotal);
+        return view('salesPerformance/grafik', $chartTotal);
+    }
 }

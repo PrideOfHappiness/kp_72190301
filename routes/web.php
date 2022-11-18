@@ -25,7 +25,10 @@ use App\Http\Controllers\llistPembayaran4;
 Route::get('/addData', [ExcelController::class, 'getFormAddData'])->name('addDataExcel');
 Route::post('/importData', [ExcelController::class, 'importData'])->name('importData');
 Route::get('/showData', [ExcelController::class, 'showData'])->name('lihatData');
+
+//Dashboard dan Komponen Pendukung
 Route::get('/', [ExcelController::class, 'dashboard'])->name('dashboard');
+Route::get('/aboutUs', [ExcelController::class, 'aboutUs'])->name('tentang');
 
 //Get Form dan Pemrosesan Data List Sepeda Motor
 Route::get('/listMotor/pilihTanggal', [listSepedaMotor::class, 'getFormTanggal'])->name('pilihTanggalMotor');
@@ -35,14 +38,17 @@ Route::get('/listMotor/allData', [listSepedaMotor::class, 'getSeluruhData'])->na
 //Get Form dan Pemrosesan List Sales
 Route::get('/listSales/pilihTanggal', [listSalesPerformannce::class, 'getFormTanggal'])->name('pilihTanggalSales');
 Route::post('/listSales/prosesDataSales', [listSalesPerformannce::class, 'prosesTanggal'])->name('prosesDataSales');
+Route::get('/listSales/allData', [listSalesPerformannce::class, 'getSeluruhData'])->name('getAllSalesData');
 
 //Get Form dan Pemrosesan List Perusahaan Finance
 Route::get('/listFinance/pilihTanggal', [listFinance::class, 'getFormTanggal'])->name('pilihTanggalFinance');
 Route::post('/listFinance/prosesDataFinance', [listFinance::class, 'prosesTanggal'])->name('prosesDataFinance');
+Route::get('/listFinance/allData', [listFinance::class, 'getSeluruhData'])->name('getAllFinance');
 
 //Get Form dan Pemrosesan List Moda Pembayaran
 Route::get('/listPembayaran/pilihTanggal', [llistPembayaran4::class, 'getFormTanggal'])->name('pilihTanggalPembayaran');
 Route::post('/listPembayaran/prosesDataPembayaran', [llistPembayaran4::class, 'prosesTanggal'])->name('prosesDataPembayaran');
+Route::get('/listPembayaran/allData', [llistPembayaran4::class, 'getSeluruhData'])->name('getAllPembayaran');
 
 
 

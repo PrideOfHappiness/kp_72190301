@@ -1,5 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @include('template/header')
+    <title>Hasil Pencarian Data Sepeda Motor</title>
+</head>
 <body>
-@include('template/header')
 @include('template/navbar')
 @include('template/sidebar')
 
@@ -28,6 +33,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
 </body>
+</html>
 
 <script>
         //--GrafikSPM1 (Keluar Hasil SQL)
@@ -46,11 +52,11 @@
                 borderWidth: 1
                 }]
         };
-        
+
         const configBar = {
             type: 'bar',
             data: data,
-            options:  
+            options:
             {
                 maintainAspectRatio : true,
                 responsive : true,
@@ -66,8 +72,9 @@
                     }],
                     yAxes: [{
                         display: true,
-                        scaleLabel: {
-                            show: true
+                        title: {
+                            display: true,
+                            text: "Jumlah Data",
                         },
                         gridLines: {
                             color:"#ecedef"
@@ -78,7 +85,7 @@
                         }
                     }]
                 }
-            }   
+            }
         };
 
         const grafikSPM1 = new Chart(
@@ -87,4 +94,4 @@
         );
 </script>
 
- 
+

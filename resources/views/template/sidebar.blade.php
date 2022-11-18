@@ -32,10 +32,10 @@
               </p>
             </a>
           </li>
-          <li class="nav-header">Rekap Data dan Grafik</li>
+          <li class="nav-header">Rekap Data dan Grafik Keluaran Informasi</li>
           <li class="nav-item">
             <a href="{{ route('lihatData') }}" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+              <i class="nav-icon fa-solid fa-table-list"></i>
               <p>
                 Data Penjualan Keseluruhan
               </p>
@@ -43,7 +43,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('pilihTanggalMotor') }}" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+            <i class="nav-icon fa-solid fa-motorcycle"></i>
               <p>
                 Data Sepeda Motor Terjual
               </p>
@@ -51,7 +51,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('pilihTanggalSales') }}" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+              <i class="nav-icon fa-solid fa-person"></i>
               <p>
                 Data Sales Performance
               </p>
@@ -59,7 +59,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('pilihTanggalPembayaran') }}" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+              <i class="nav-icon fa-solid fa-coins"></i>
               <p>
                 Data Moda Transaksi
               </p>
@@ -67,7 +67,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('pilihTanggalFinance') }}" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+              <i class="nav-icon fa-solid fa-building"></i>
               <p>
                 Data Jumlah Perusahaan Financing
               </p>
@@ -76,9 +76,18 @@
           <li class="nav-header">Unggah Data</li>
           <li class="nav-item">
             <a href="{{ route('addDataExcel') }}" class="nav-link">
-              <i class="nav-icon far fa-plus-square"></i>
+              <i class="nav-icon fa-solid fa-plus"></i>
               <p>
                 Unggah Data Penjualan
+              </p>
+            </a>
+          </li>
+          <li class="nav-header"> Tentang </li>
+          <li class="nav-item menu-open">
+            <a href="{{ route('tentang') }}" class="nav-link active">
+              <i class="nav-icon fa-solid fa-align-justify"></i>
+              <p>
+                Tentang Situs Ini
               </p>
             </a>
           </li>
@@ -87,3 +96,10 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  <!--/aside -->
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->

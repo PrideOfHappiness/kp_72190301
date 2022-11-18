@@ -1,5 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @include('template/header')
+    <title>Hasil Pencarian Data Sales</title>
+</head>
 <body>
-@include('template/header')
 @include('template/navbar')
 @include('template/sidebar')
 
@@ -28,6 +33,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
 </body>
+</html>
 
 <script>
         //--GrafikSPM1 (Keluar Hasil SQL)
