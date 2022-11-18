@@ -32,7 +32,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-header">Rekap Data dan Grafik Keluaran Informasi</li>
+          <li class="nav-header">Rekap Data dan Grafik Informasi</li>
           <li class="nav-item">
             <a href="{{ route('lihatData') }}" class="nav-link">
               <i class="nav-icon fa-solid fa-table-list"></i>
