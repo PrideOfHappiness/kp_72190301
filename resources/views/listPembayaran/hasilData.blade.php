@@ -62,27 +62,19 @@
                 responsive : true,
                 cutoutPercentage: 80,
                 scales: {
-                    xAxes: [{
-                        barPercentage:1,
-                        categoryPercentage:0.5,
-                        gridLines: {
-                            display: true
-                        },
-                        ticks: {fontColor:"#8f9092"}
-                    }],
-                    yAxes: [{
-                        display: true,
-                        scaleLabel: {
-                            show: true
-                        },
-                        gridLines: {
-                            color:"#ecedef"
-                        },
-                        ticks: {
-                            beginAtZero: true,
-                            stepSize: 1.3,
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Moda Pembayaran'
                         }
-                    }]
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true, 
+                            text: 'Jumlah Data'
+                        }
+                    }
                 }
             }
         };

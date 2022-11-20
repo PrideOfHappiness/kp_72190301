@@ -44,7 +44,7 @@
                 label: "Jumlah unit terdaftar di ACRS",
                 data: chartDatas.jumlah,
                 backgroundColor: [
-                    '#f56954',
+                    'rgba(055, 99, 132, 0.2)',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -62,28 +62,19 @@
                 responsive : true,
                 cutoutPercentage: 80,
                 scales: {
-                    xAxes: [{
-                        barPercentage:1,
-                        categoryPercentage:0.5,
-                        gridLines: {
-                            display: true
-                        },
-                        ticks: {fontColor:"#8f9092"}
-                    }],
-                    yAxes: [{
-                        display: true,
+                    x: {
                         title: {
                             display: true,
-                            text: "Jumlah Data",
-                        },
-                        gridLines: {
-                            color:"#ecedef"
-                        },
-                        ticks: {
-                            beginAtZero: true,
-                            stepSize: 1.3,
+                            text: 'Nama Sepeda Motor'
                         }
-                    }]
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true, 
+                            text: 'Jumlah Data'
+                        }
+                    }
                 }
             }
         };

@@ -33,7 +33,7 @@ class listSalesPerformannce extends Controller
     }
 
     public function getSeluruhData(){
-        $getData = Excel_Data::selectRaw('count(Nama_Barang) as countData, Nama_Sales as namaSales')
+        $getData = Excel_Data::selectRaw('count(Nama_Sales) as countData, Nama_Sales as namaSales')
             ->groupBy('Nama_Sales')->get();
 
         $chartTotal = [];

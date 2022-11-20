@@ -6,6 +6,7 @@ use App\Http\Controllers\listSepedaMotor;
 use App\Http\Controllers\listSalesPerformannce;
 use App\Http\Controllers\listFinance;
 use App\Http\Controllers\llistPembayaran4;
+use App\Http\Controllers\listLokasi;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +50,12 @@ Route::get('/listFinance/allData', [listFinance::class, 'getSeluruhData'])->name
 Route::get('/listPembayaran/pilihTanggal', [llistPembayaran4::class, 'getFormTanggal'])->name('pilihTanggalPembayaran');
 Route::post('/listPembayaran/prosesDataPembayaran', [llistPembayaran4::class, 'prosesTanggal'])->name('prosesDataPembayaran');
 Route::get('/listPembayaran/allData', [llistPembayaran4::class, 'getSeluruhData'])->name('getAllPembayaran');
+
+//Lokasi
+Route::get('/lokasi/ambilData', [listLokasi::class, 'getForm'])->name('ambilTanggalLokasi');
+Route::post('/lokasi/prosesLokasiKota', [listLokasi::class, 'proses'])->name('prosesTanggalLokasi');
+Route::get('/lokasi/ambilDataKecamatan', [listLokasi::class, 'getForm'])->name('ambilTanggalLokasiKecamatan');
+Route::post('/lokasi/prosesLokasiKecamatab', [listLokasi::class, 'getLokasiByKecamatan'])->name('prosesTanggalLokasiKecamatan');
 
 
 

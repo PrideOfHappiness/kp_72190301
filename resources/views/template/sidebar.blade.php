@@ -73,6 +73,23 @@
               </p>
             </a>
           </li>
+          <li class="nav-header">Lokasi Konsumen</li>
+          <li class="nav-item">
+            <a href="{{ route('ambilTanggalLokasi') }}" class="nav-link">
+              <i class="nav-icon fa-solid fa-earth-asia"></i>
+              <p>
+                Data Lokasi Konsumen per Kabupaten/Kota
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('ambilTanggalLokasiKecamatan') }}" class="nav-link">
+              <i class="nav-icon fa-solid fa-location-dot"></i>
+              <p>
+                Data Lokasi Konsumen per Kecamatan
+              </p>
+            </a>
+          </li>
           <li class="nav-header">Unggah Data</li>
           <li class="nav-item">
             <a href="{{ route('addDataExcel') }}" class="nav-link">

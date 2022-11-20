@@ -16,10 +16,10 @@
                     <div class="inner">
                         <h3>{{ $dataSeluruh }} </h3>
                         <br>
-                        <p> Data Transaksi Terdeteksi </p>
+                        <p> Data Pengiriman Terdeteksi </p>
                     </div>
                     <div class="icon"> 
-                        <i class="fa-solid fa-grip-lines"></i>
+                        <i class="fa-solid fa-truck"></i>
                     </div>
                     <a href="{{ route('lihatData') }}" class="small-box-footer"> Lihat Lebih Mendetail <i class="fas fa-arrow-right"></i></a>
                 </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     @include('template/header')
-    <title>Hasil Pencarian Data Sales</title>
+    <title>Hasil Pencarian Data Lokasi per tingkat Kabupaten/Kota</title>
 </head>
 <body>
 @include('template/navbar')
@@ -12,7 +12,7 @@
    <div class="container-fluid" >
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title"> Hasil Pencarian Data Performa Sales Dari Tanggal {{ $awal }} sampai Tanggal {{ $akhir }} </h3>
+                <h3 class="card-title"> Hasil Pencarian Data Lokasi per tingkat Kabupaten/Kota Dari Tanggal {{ $awal }} sampai Tanggal {{ $akhir }} </h3>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
@@ -22,7 +22,7 @@
                     </button>
                 </div>
             </div>
-            <div class="card-body"><canvas id="grafikSales"></canvas>
+            <div class="card-body"><canvas id="grafikSPM1"></canvas>
             </div>
         </div>
    </div>
@@ -41,7 +41,7 @@
         const data = {
             labels: chartDatas.label,
             datasets: [{
-                label: "Jumlah Kendaraan Terjual oleh Sales",
+                label: "Jumlah Kredit Perusahaan Financing Terhitung",
                 data: chartDatas.jumlah,
                 backgroundColor: [
                     '#f56954',
@@ -52,37 +52,39 @@
                 borderWidth: 1
                 }]
         };
-        
+
         const configBar = {
             type: 'bar',
             data: data,
-            options:  
+            options:
             {
                 maintainAspectRatio : true,
                 responsive : true,
                 cutoutPercentage: 80,
                 scales: {
+                    scales: {
                     x: {
                         title: {
                             display: true,
-                            text: 'Nama Sales'
+                            text: 'Nama Kabupaten/Kota'
                         }
                     },
                     y: {
                         beginAtZero: true,
                         title: {
                             display: true, 
-                            text: 'Jumlah Data'
+                            text: 'Nilai Data'
                         }
                     }
                 }
-            }   
+            }
+        }
         };
 
-        const grafikSales = new Chart(
-            document.getElementById('grafikSales'),
+        const grafikSPM1 = new Chart(
+            document.getElementById('grafikSPM1'),
             configBar
         );
 </script>
 
- 
+

@@ -16,7 +16,7 @@
             seputar penjualan sepeda motor yang dibutuhkan. </p>
             <br />
             <p> Situs ini dikembangkan melalui kerangka kerja (<i>Framework</i>) Antar Muka AdminLTE dan beberapa komponen grafis diambil dari situs <a href="https://fontawesome.com/">Font Awesome </a>. Untuk melihat dokumentasi antar muka secara penuh, dapat mengunjungi <a href="https://adminlte.io/themes/v3/"> situs AdminLTE </a> berikut ini. 
-            Sedangkan alur pemrosesan data dikembangkan berdasarkan saran-saran yang didapat secara bebas dan terbuka dari internet. </p>
+            Sedangkan alur pemrosesan data dikembangkan menggunakan kerangka kerja (<i>Framework</i>) Laravel berdasarkan saran-saran yang didapat secara bebas dan terbuka dari internet. </p>
             <p> Akan tetapi, kami mengakui bahwa sistem ini tidaklah sempurna sepenuhnya. Kritik, Masukkan dan Saran kami terima sepenuhnya untuk pengembangan
             situs ini ke depannya agar dapat menjadi lebih baik lagi. </p>
             <p> Apabila terdapat hal-hal yang ingin ditanyakan atau terdapat saran pengguna untuk sistem ini, dapat menyampaikan masukan dan saran melalui: </p> 

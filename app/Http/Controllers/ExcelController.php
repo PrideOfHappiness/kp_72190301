@@ -29,7 +29,7 @@ class ExcelController extends Controller
 
     public function importData(Request $request){
         Excel::import(new ACRSImport, $request->file('file')->store('temp'));
-        return redirect('/dashboard');
+        return redirect('/');
     }
 
     public function showData(){
