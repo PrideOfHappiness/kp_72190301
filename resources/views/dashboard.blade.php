@@ -63,11 +63,32 @@
                     <a href="{{ route('getAllFinance') }}" class="small-box-footer"> Lihat Lebih Mendetail <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>{{ $dataStok }} </h3>
+                        <br>
+                        <p> Stok Barang Terdeteksi </p>
+                    </div>
+                    <div class="icon"> 
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                    <a href="{{ route('showDataStok') }}" class="small-box-footer"> Lihat Lebih Mendetail <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
         <div class="row">
-            
+            <div class="card"> 
+                <div class="card-header"> 
+                    <h3 class="card-title"> Grafik Sepeda Motor</h3>
+                </div>
+                <div class="card-body"> 
+                    <canvas id="grafikSPM1"></canvas>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 @include('template/footer')
 </body>
+</html>

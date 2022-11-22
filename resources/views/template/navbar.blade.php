@@ -9,6 +9,9 @@
         <a href="{{ route('dashboard') }}" class="nav-link">Dashboard</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('pilihData') }}" class="nav-link">Kelompok Data</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('tentang') }}" class="nav-link">Tentang Situs dan Kontak Perusahaan</a>
       </li>
     </ul>

@@ -32,12 +32,29 @@
               </p>
             </a>
           </li>
-          <li class="nav-header">Rekap Data dan Grafik Informasi</li>
+          <li class="nav-header">Data dan Grafik Informasi Stok</li>
+          <li class="nav-item">
+            <a href="{{ route('showDataStok') }}" class="nav-link">
+              <i class="nav-icon fa-solid fa-warehouse"></i>
+              <p>
+                Data Stok Keseluruhan
+              </p>
+            </a>
+          </li>
+          <li class="nav-header">Data dan Grafik Informasi Penjualan</li>
           <li class="nav-item">
             <a href="{{ route('lihatData') }}" class="nav-link">
               <i class="nav-icon fa-solid fa-table-list"></i>
               <p>
                 Data Penjualan Keseluruhan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('formGrafikByDate') }}" class="nav-link">
+              <i class="nav-icon fa-solid fa-table-list"></i>
+              <p>
+                Data Penjualan Berdasarkan Tanggal
               </p>
             </a>
           </li>
@@ -93,9 +110,17 @@
           <li class="nav-header">Unggah Data</li>
           <li class="nav-item">
             <a href="{{ route('addDataExcel') }}" class="nav-link">
-              <i class="nav-icon fa-solid fa-plus"></i>
+              <i class="fa-solid fa-file-circle-plus"></i>
               <p>
                 Unggah Data Penjualan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('getStokUploadForm') }}" class="nav-link">
+              <i class="fa-solid fa-file-circle-plus"></i>
+              <p>
+                Unggah Data Stok
               </p>
             </a>
           </li>
@@ -116,7 +141,7 @@
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
-  <!--/aside -->
+  </aside >
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->

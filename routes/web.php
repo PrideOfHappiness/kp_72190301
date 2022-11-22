@@ -7,6 +7,9 @@ use App\Http\Controllers\listSalesPerformannce;
 use App\Http\Controllers\listFinance;
 use App\Http\Controllers\llistPembayaran4;
 use App\Http\Controllers\listLokasi;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\StokController;
+use App\Http\Controller\GrafikDashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,13 +26,26 @@ use App\Http\Controllers\listLokasi;
 });*/
 
 //Import dan Show keseluruhan data
-Route::get('/addData', [ExcelController::class, 'getFormAddData'])->name('addDataExcel');
-Route::post('/importData', [ExcelController::class, 'importData'])->name('importData');
-Route::get('/showData', [ExcelController::class, 'showData'])->name('lihatData');
+Route::get('/penjualan/addData', [ExcelController::class, 'getFormAddData'])->name('addDataExcel');
+Route::post('/penjualan/importData', [ExcelController::class, 'importData'])->name('importData');
+
+//Stok
+Route::get('/stok/addData', [StokController::class, 'getImportForm'])->name('getStokUploadForm');
+Route::post('/stok/importData', [StokController::class, 'prosesImport'])->name('importStokData');
+Route::get('/stok/showData', [StokController::class, 'showAllData'])->name('showDataStok');
 
 //Dashboard dan Komponen Pendukung
 Route::get('/', [ExcelController::class, 'dashboard'])->name('dashboard');
 Route::get('/aboutUs', [ExcelController::class, 'aboutUs'])->name('tentang');
+Route::get('/data', [ExcelController::class, 'data'])->name('pilihData');
+
+//Get Transaction
+Route::get('/transaksi/showData', [ExcelController::class, 'showData'])->name('lihatData');
+Route::get('/transaksi/ambilDataByDate', [ExcelController::class, 'getFormTransactionDataByDate'])->name('formByDate');
+Route::any('transaksi/prosesDataByDate', [ExcelController::class, 'showDataByDate'])->name('hasilData');
+Route::get('/transaksi/ambilDataGrafik', [TransactionController::class, 'getForm'])->name('formGrafikByDate');
+Route::post('/transaksi/prosesDataGrafik', [TransactionController::class, 'getDateTransactionData'])->name('grafikByDate');
+Route::get('/transaksi/ambilDataAll', [TransactionController::class, 'getAllTransactionData'])->name('getAllTransactionData');
 
 //Get Form dan Pemrosesan Data List Sepeda Motor
 Route::get('/listMotor/pilihTanggal', [listSepedaMotor::class, 'getFormTanggal'])->name('pilihTanggalMotor');
@@ -54,7 +70,7 @@ Route::get('/listPembayaran/allData', [llistPembayaran4::class, 'getSeluruhData'
 //Lokasi
 Route::get('/lokasi/ambilData', [listLokasi::class, 'getForm'])->name('ambilTanggalLokasi');
 Route::post('/lokasi/prosesLokasiKota', [listLokasi::class, 'proses'])->name('prosesTanggalLokasi');
-Route::get('/lokasi/ambilDataKecamatan', [listLokasi::class, 'getForm'])->name('ambilTanggalLokasiKecamatan');
+Route::get('/lokasi/ambilDataKecamatan', [listLokasi::class, 'getFormKecamatan'])->name('ambilTanggalLokasiKecamatan');
 Route::post('/lokasi/prosesLokasiKecamatab', [listLokasi::class, 'getLokasiByKecamatan'])->name('prosesTanggalLokasiKecamatan');
 
 

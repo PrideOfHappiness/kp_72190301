@@ -62,23 +62,21 @@
                 responsive : true,
                 cutoutPercentage: 80,
                 scales: {
-                    scales: {
                     x: {
                         title: {
                             display: true,
-                            text: 'Nama Kabupaten/Kota'
+                            text: 'Nama Kab/Kota'
                         }
                     },
                     y: {
                         beginAtZero: true,
                         title: {
                             display: true, 
-                            text: 'Nilai Data'
+                            text: 'Jumlah Data'
                         }
                     }
                 }
             }
-        }
         };
 
         const grafikSPM1 = new Chart(

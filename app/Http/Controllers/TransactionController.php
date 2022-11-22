@@ -8,6 +8,10 @@ use Carbon\Carbon;
 
 class TransactionController extends Controller
 {
+    public function getForm(){
+        return view('listTransaction/pickDataGrafik');
+    }
+
     public function getAllTransactionData(){
         $dataAll = Excel_Data::selectRaw('count(Tanggal_FJ) as countTransaction, Tanggal_FJ as tanggal')
             ->groupBy('Tanggal_FJ')->get();
@@ -19,7 +23,12 @@ class TransactionController extends Controller
             $chartData['jumlah'][] = $data->countTransaction;
         }
 
+        $chartData['totalNonDate'] = json_encode($chartData); 
 
+        return view('listTransaction/HasilDataGrafikAll', $chartData)
+            ->with('awal', $awal)
+            ->with('akhir', $akhir);
+    
 
     }
 
@@ -36,5 +45,11 @@ class TransactionController extends Controller
             $chartData['label'][] = $data->tanggal;
             $chartData['jumlah'][] = $data->countTransaction;
         }
+
+        $chartData['total'] = json_encode($chartData);
+
+        return view('listTransaction/HasilDataGrafik', $chartData)
+            ->with('awal', $awal)
+            ->with('akhir', $akhir);
     }
 }

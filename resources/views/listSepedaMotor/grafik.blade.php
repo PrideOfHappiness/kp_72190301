@@ -56,25 +56,23 @@
         data: data,
         options: 
         {
-            maintainAspectRatio: true, 
-            responsive: true,
-            scales: {
-                xAxes: [{
-                    barPercentage: 2,
-                    categoryPercentage: 0.5,
-                    gridLines: {
-                        display: true,
-                    }
-                }],
-                yAxes: [{
-                    display: true, 
-                    scaleLabel: {
-                        show: true,
+            maintainAspectRatio : true,
+                responsive : true,
+                cutoutPercentage: 80,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Nama Sepeda Motor'
+                        }
                     },
-                    ticks: {
+                    y: {
                         beginAtZero: true,
-                    }
-                }]
+                        title: {
+                            display: true, 
+                            text: 'Jumlah Data'
+                        }
+                }
             }
         }
     };

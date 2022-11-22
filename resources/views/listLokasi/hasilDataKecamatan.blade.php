@@ -12,7 +12,7 @@
    <div class="container-fluid" >
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title"> Hasil Pencarian Data Lokasi per tingkat Kabupaten/Kota Dari Tanggal {{ $awal }} sampai Tanggal {{ $akhir }} </h3>
+                <h3 class="card-title"> Hasil Pencarian Data Lokasi per tingkat Kecamatan Dari Tanggal {{ $awal }} sampai Tanggal {{ $akhir }} </h3>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
@@ -62,23 +62,21 @@
                 responsive : true,
                 cutoutPercentage: 80,
                 scales: {
-                    scales: {
                     x: {
                         title: {
                             display: true,
-                            text: 'Nama Kabupaten/Kota'
+                            text: 'Nama Kecamatan'
                         }
                     },
                     y: {
                         beginAtZero: true,
                         title: {
                             display: true, 
-                            text: 'Nilai Data'
+                            text: 'Jumlah Data'
                         }
                     }
                 }
             }
-        }
         };
 
         const grafikSPM1 = new Chart(

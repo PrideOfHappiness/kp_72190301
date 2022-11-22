@@ -5,10 +5,9 @@
     <title>Hasil Pencarian Data</title>
 </head>
 <body>
-@include('template/navbar')
-@include('template/sidebar')
-
-<section class="content">
+    @include('template/navbar')
+    @include('template/sidebar')
+    <section class="content">
     <div class="container-fluid">
         <div class="col-12">
             <div class="card card-primary">
@@ -49,8 +48,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @if(!empty($data) && $data->count())
-                            @foreach ($data as $row)
+                    @if(!empty($prosesData) && $prosesData->count())
+                            @foreach ($prosesData as $row)
                                 <tr>
                                     <td> {{ $row-> id}} </td>
                                     <td> {{ $row-> Tanggal_FJ}} </td>
@@ -84,7 +83,6 @@
                         @endif
                     </tbody>
                     </table>
-                    {{$data->links()}}
                     </div>
                 </div>
             </div>
@@ -95,3 +93,5 @@
 @include('template/footer')
 </body>
 </html>
+
+    

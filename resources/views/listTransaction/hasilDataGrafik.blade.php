@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     @include('template/header')
-    <title>Hasil Pencarian Data Sepeda Motor</title>
+    <title>Hasil Pencarian Data Sales</title>
 </head>
 <body>
 @include('template/navbar')
@@ -12,7 +12,7 @@
    <div class="container-fluid" >
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title"> Hasil Pencarian Data Sepeda Motor Terjual Dari Tanggal {{ $awal }} sampai Tanggal {{ $akhir }} </h3>
+                <h3 class="card-title"> Hasil Pencarian Data Transaksi Dari Tanggal {{ $awal }} sampai Tanggal {{ $akhir }} </h3>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
@@ -22,7 +22,7 @@
                     </button>
                 </div>
             </div>
-                <div class="card-body"><canvas id="grafikSPM1"></canvas>
+            <div class="card-body"><canvas id="grafikSales"></canvas>
             </div>
         </div>
    </div>
@@ -37,14 +37,14 @@
 
 <script>
         //--GrafikSPM1 (Keluar Hasil SQL)
-        var chartDatas = JSON.parse('<?php echo $chart_data; ?>');
+        var chartDatas = JSON.parse('<?php echo $total; ?>');
         const data = {
             labels: chartDatas.label,
             datasets: [{
-                label: "Jumlah unit terdaftar di ACRS",
+                label: "Jumlah Transaksi Terdeteksi",
                 data: chartDatas.jumlah,
                 backgroundColor: [
-                    'rgba(055, 99, 132, 0.2)',
+                    'rgba(0, 255, 255, 1)',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -52,11 +52,11 @@
                 borderWidth: 1
                 }]
         };
-
+        
         const configBar = {
-            type: 'bar',
+            type: 'line',
             data: data,
-            options:
+            options:  
             {
                 maintainAspectRatio : true,
                 responsive : true,
@@ -65,7 +65,7 @@
                     x: {
                         title: {
                             display: true,
-                            text: 'Nama Sepeda Motor'
+                            text: 'Tanggal Transaksi'
                         }
                     },
                     y: {
@@ -76,13 +76,13 @@
                         }
                     }
                 }
-            }
+            }   
         };
 
-        const grafikSPM1 = new Chart(
-            document.getElementById('grafikSPM1'),
+        const grafikSales = new Chart(
+            document.getElementById('grafikSales'),
             configBar
         );
 </script>
 
-
+ 
