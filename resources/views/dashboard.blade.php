@@ -18,7 +18,7 @@
                         <br>
                         <p> Data Pengiriman Terdeteksi </p>
                     </div>
-                    <div class="icon"> 
+                    <div class="icon">
                         <i class="fa-solid fa-truck"></i>
                     </div>
                     <a href="{{ route('lihatData') }}" class="small-box-footer"> Lihat Lebih Mendetail <i class="fas fa-arrow-right"></i></a>
@@ -31,7 +31,7 @@
                         <br>
                         <p> Merk Sepeda Motor Terdeteksi </p>
                     </div>
-                    <div class="icon"> 
+                    <div class="icon">
                         <i class="fa-solid fa-motorcycle"></i>
                     </div>
                     <a href="{{ route('getAllMotorData') }}" class="small-box-footer"> Lihat Lebih Mendetail <i class="fas fa-arrow-right"></i></a>
@@ -44,7 +44,7 @@
                         <br>
                         <p> Nama Sales Terdeteksi </p>
                     </div>
-                    <div class="icon"> 
+                    <div class="icon">
                         <i class="fa-solid fa-person"></i>
                     </div>
                     <a href="{{ route('getAllSalesData') }}" class="small-box-footer"> Lihat Lebih Mendetail <i class="fas fa-arrow-right"></i></a>
@@ -57,7 +57,7 @@
                         <br>
                         <p> Perusahaan Financing Terdeteksi </p>
                     </div>
-                    <div class="icon"> 
+                    <div class="icon">
                         <i class="fa-solid fa-building"></i>
                     </div>
                     <a href="{{ route('getAllFinance') }}" class="small-box-footer"> Lihat Lebih Mendetail <i class="fas fa-arrow-right"></i></a>
@@ -70,7 +70,7 @@
                         <br>
                         <p> Stok Barang Terdeteksi </p>
                     </div>
-                    <div class="icon"> 
+                    <div class="icon">
                         <i class="fa-solid fa-warehouse"></i>
                     </div>
                     <a href="{{ route('showDataStok') }}" class="small-box-footer"> Lihat Lebih Mendetail <i class="fas fa-arrow-right"></i></a>
@@ -78,12 +78,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="card"> 
-                <div class="card-header"> 
-                    <h3 class="card-title"> Grafik Sepeda Motor</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"> Grafik Penjualan Barang</h3>
                 </div>
-                <div class="card-body"> 
-                    <canvas id="grafikSPM1"></canvas>
+                <div class="card-body">
+                    <div id="grafikPenjualan"></div>
                 </div>
             </div>
         </div>
@@ -92,3 +92,7 @@
 @include('template/footer')
 </body>
 </html>
+
+<script type="text/javascript"> 
+
+</script>

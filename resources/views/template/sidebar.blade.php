@@ -41,6 +41,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('ambilDataStok') }}" class="nav-link">
+              <i class="nav-icon fa-solid fa-warehouse"></i>
+              <p>
+                Data Stok Berdasarkan Sepeda Motor
+              </p>
+            </a>
+          </li>
           <li class="nav-header">Data dan Grafik Informasi Penjualan</li>
           <li class="nav-item">
             <a href="{{ route('lihatData') }}" class="nav-link">

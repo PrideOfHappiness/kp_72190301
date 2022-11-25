@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->date('Tanggal_FJ');
             $table->string('Nomor_FJ')->nullable();
-            $table->string('Gudang');
+            $table->string('Gudang')->nullable();
             $table->string('Nomor_Mesin');
             $table->string('Nomor_Rangka');
             $table->string('Tahun');

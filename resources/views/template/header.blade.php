@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="{{ asset('style/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
   <!-- iCheck -->
   <link rel="stylesheet" href="{{ asset('style/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+  <!-- Highcharts -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
   <!-- JQVMap -->
   <link rel="stylesheet" href="{{ asset('style/plugins/jqvmap/jqvmap.min.css') }}">
   <!-- Theme style -->

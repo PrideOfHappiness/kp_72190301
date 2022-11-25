@@ -33,6 +33,8 @@ Route::post('/penjualan/importData', [ExcelController::class, 'importData'])->na
 Route::get('/stok/addData', [StokController::class, 'getImportForm'])->name('getStokUploadForm');
 Route::post('/stok/importData', [StokController::class, 'prosesImport'])->name('importStokData');
 Route::get('/stok/showData', [StokController::class, 'showAllData'])->name('showDataStok');
+Route::get('/stok/ambilData', [StokController::class, 'getDateForm'])->name('ambilDataStok');
+Route::post('/stok/proses', [StokController::class, 'getStokByDate'])->name('prosesDataStok');
 
 //Dashboard dan Komponen Pendukung
 Route::get('/', [ExcelController::class, 'dashboard'])->name('dashboard');
