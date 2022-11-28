@@ -100,4 +100,23 @@
         );
 </script>
 
+<script>
+    function initMap(){
+        var map;
+        var bounds = new google.maps.LatLngBound();
+        var mapOptions = {
+            mapTypeId: 'roadmap'
+        };
+
+        map = new google.maps.Map(document.getElementById("mapKota"), mapOptions);
+        map.setTilt(100);
+
+        var markers = [
+            <?php if($result->num_rows > 0){
+                while($row = $result->
+            }
+        ]
+    }
+</script>
+
 
