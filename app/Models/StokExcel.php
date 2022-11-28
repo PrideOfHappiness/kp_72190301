@@ -16,6 +16,7 @@ class StokExcel extends Model
         'Kode_Div',
         'Kode_Gdg',
         'Kode_Brg',
+        'Kode_Mtr',
         'Nama_Brg',
         'No_Mesin',
         'No_Rangka',

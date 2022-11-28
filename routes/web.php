@@ -28,6 +28,7 @@ use App\Http\Controller\GrafikDashboardController;
 //Import dan Show keseluruhan data
 Route::get('/penjualan/addData', [ExcelController::class, 'getFormAddData'])->name('addDataExcel');
 Route::post('/penjualan/importData', [ExcelController::class, 'importData'])->name('importData');
+Route::get('/test', [StokController::class, 'getSisaStok'])->name('sisaStok');
 
 //Stok
 Route::get('/stok/addData', [StokController::class, 'getImportForm'])->name('getStokUploadForm');

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('Kode_Div');
             $table->string('Kode_Gdg');
             $table->string('Kode_Brg');
-            $table->string('Nama_Brg');
+            $table->string('Kode_Mtr');
+            $table->string('Nama_Brg')->nullable();
             $table->string('No_Mesin');
             $table->string('No_Rangka');
             $table->string('No_Stok');

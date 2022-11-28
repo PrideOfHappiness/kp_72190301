@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Imports\StokACRSImport;
 use App\Models\StokExcel;
+use App\Models\Excel_Data;
 use Maatwebsite\Excel\Facades\Excel;
 
 class StokController extends Controller
@@ -54,6 +55,25 @@ class StokController extends Controller
         return view('dashboard', compact('getData'));
 
     }
+
+    public function getSisaStok(Request $request){
+        $query1 = StokExcel::selectRaw('Nama_Warna as Warna, Kode_Mtr as Kode, Nama_Brg as nama, count(substr(Nama_Brg,0,15)) as count')
+            ->groupBy(['Kode', 'nama', 'Nama_Warna'])->get();
+
+        $query2 = Excel_Data::selectRaw('Warna, Spesifikasi_Lain as Kode, Nama_Barang as nama, count(Spesifikasi_Lain) as count')
+            ->groupby(['Kode', 'nama', 'Warna'])->get();
+
+        if($query1 == $query2){
+            $hasil = $query1 - $query2;
+        }else{
+            $hasil = $query1;
+        }
+
+        return view('test', compact('hasil'));
+
+    }
+
+
 
 
 }
