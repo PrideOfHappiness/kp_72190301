@@ -25,6 +25,8 @@
   <link rel="stylesheet" href="{{ asset('style/plugins/jqvmap/jqvmap.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('style/dist/css/adminlte.min.css') }}">
+  <!-- GMaps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=Your_API_KEY"></script>
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{ asset('style/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
   <!-- Daterange picker -->
