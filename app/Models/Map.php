@@ -16,5 +16,6 @@ class Map extends Model
         'longitude',
         'namaTempat',
         'kab/kota',
+        'icon',
     ];
 }

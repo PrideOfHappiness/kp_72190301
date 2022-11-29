@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('longitude');
             $table->string('namaTempat');
             $table->string('kab/kota');
+            $table->string('icon')->comment = "Marker Icon";
             $table->timestamps();
         });
     }

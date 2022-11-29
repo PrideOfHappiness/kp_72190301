@@ -113,9 +113,40 @@
 
         var markers = [
             <?php if($result->num_rows > 0){
-                while($row = $result->
+                while($row = $result->fetch_assoc()) {
+                    echo '["'.$row['namaTempat'].'",'.$row['kab/kota'].'",'.$row['latitude'].'",'.$row['longitude'].'",
+                    '.$row['icon'].'"],';
+                }
             }
-        ]
+            ?>
+        ];
+
+        var infoWindow = new google.maps.InfoWindow(), marker, i;
+
+        var infoWindowContent() = [
+            <?php if($info->num_rows > 0) {
+                while($row = $info->fetch_assoc()){ ?>
+                    ['div class = "info_content">' +
+                    '<h3> <?php echo $row['namaTempat']; ?> </h3>' +
+                    '<p <?php echo $row['kab/kota']; ?> </p>' +
+                    '<p <?php echo $row['icon']; ?> </p>' +'</div>'],
+                    <?php
+                }
+            }
+            ?>
+        ];
+        for(i = 0; i < markers.length; i++){
+            var position  = new google.maps.LatLng(markers[i][2], markers[i][3]);
+            bounds.extend(position);
+            marker = new google.maps.marker({
+                position: position,
+                map: map,
+                icon: markers[i][4],
+                title: markers[i][0]
+            });
+
+            google.maps.event.addListener()
+        }
     }
 </script>
 

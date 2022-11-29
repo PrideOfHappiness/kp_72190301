@@ -10,6 +10,11 @@ class MapController extends Controller
 {
     public function getLatLngKabKota(){
         $result = Map::all();
-        return view('listLokasi/hasilDataKota', compact('result'))
+        return view('listLokasi/hasilDataKota', compact('result'));
+    }
+
+    public function getLatLngKabKotaInfo(){
+        $info = Map::all();
+        return view('listLokasi/hasilDataKota', compact('info'));
     }
 }

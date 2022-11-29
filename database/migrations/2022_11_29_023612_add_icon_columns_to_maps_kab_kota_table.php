@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('maps_kab_kota', function (Blueprint $table) {
-            $table->id();
-            $table->string('latitude');
-            $table->string('longitude');
-            $table->string('namaTempat');
-            $table->string('icon')->comment = "Marker Icon";
-            $table->timestamps();
+        Schema::table('maps_kab_kota', function (Blueprint $table) {
+            $table->string('icon');
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('maps_kab_kotas');
+        Schema::table('maps_kab_kota', function (Blueprint $table) {
+            //
+        });
     }
 };

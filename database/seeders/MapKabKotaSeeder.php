@@ -20,21 +20,25 @@ class MapKabKotaSeeder extends Seeder
                 'latitude' => '-8.13333',
                 'longitude' => '112.25',
                 'namaTempat' => 'Kab. Blitar',
+                'icon' => 'Marker Icon',
             ],
             [
                 'latitude' => '-8.098611',
                 'longitude' => '112.165278',
                 'namaTempat' => 'Kota Blitar',
+                'icon' => 'Marker Icon',
             ],
             [
                 'latitude' => '-7.9797',
                 'longitude' => '112.6304',
                 'namaTempat' => 'Kab. Malang',
+                'namaTempat' => 'Map Marker',
             ],
             [
                 'latitude' => '-7.98',
                 'longitude' => '112.62',
                 'namaTempat' => 'Kota Malang',
+                'namaTempat' => 'Map Marker',
             ],
         ];
 

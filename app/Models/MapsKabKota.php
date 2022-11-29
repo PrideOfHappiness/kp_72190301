@@ -13,5 +13,6 @@ class MapsKabKota extends Model
         'latitude',
         'longitude',
         'namaTempat',
+        'icon',
     ];
 }
