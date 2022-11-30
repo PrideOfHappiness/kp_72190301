@@ -18,8 +18,8 @@
                     <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>No.</th>
                             <th>Kode Barang</th>
+                            <th>Nama Barang</th>
                             <th>Warna</th>
                             <th>Jumlah Stok</th>
                         </tr>
